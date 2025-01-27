@@ -1,0 +1,32 @@
+class Solution {
+    public int findNumbers(int[] nums) {
+        int count=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            int n,r,dig=0;
+            n=nums[i];
+            if(even(n))
+            count++;
+        }
+        return count;
+    }
+    public boolean even(int n)
+    {
+        int numberofdig=dig(n);
+        return  numberofdig%2==0;
+    }
+    public int dig(int n)
+    {
+        int dig=0;
+        if (n==0)
+        return 1;
+        else if(n<0)
+        n=n*-1;
+        while(n>0)
+        {
+            dig++;
+            n=n/10;
+        }
+        return dig;
+    }
+}
